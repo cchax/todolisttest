@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <style type="text/css">
+        .noneMargin{
+                margin: 0px;
+        }
+
+        .hide{
+                display: : none;
+        }
+
+        .myGrid{
+                padding: 20px;
+        }
+        .row{
+                padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 class="noneMargin" style="background-color:Crimson;color:White"> Todo List</h1>
+    <!--<p class="noneMargin"  style="background-color:White">Manocha W.</p>-->
+    <ul class="nav nav-tabs">
+ <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Today</a></li>
+    <li><a data-toggle="tab" href="#mNextday">Next 7 Days</a></li>
+
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown">Projects
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu"  role="menu" aria-labelledby="dropdownMenu">
+          <li><a data-toggle="tab" href="#mProject1">Project 1</a></li>
+          <li><a data-toggle="tab" href="#mProject2">Project 2</a></li>
+        </ul>
+    </li>
+  </ul>
+
+ <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3></h3>
+      <div class="col-sm-12">
+        <div class="col-sm-1" style="text-align: center;">
+            <button id="btnAdd" type="button" class="btn btn-danger">ADD</button>
+        </div>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="text">
+        </div>
+        <div id="myGrid" class="col-sm-12 myGrid">
+            <div class="table-responsive">          
+                  <table  id="myTable" class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Task</th>
+                        <th><button id="finnish" type="button" class="btn btn-success" >Finnish</button></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>to do list</td>
+                        <td><input id="ch1" type="checkbox" name="vehicle" onclick="change(1);"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mNextday" class="tab-pane fade">
+      <h3 style="text-align: center;">MUST DO THIS WEEK</h3>
+
+        <div class="row col-sm-12">
+            <div class="col-sm-1">
+                <p>New Task : </p>
+            </div>
+            <div class="col-sm-6">
+                <input id="txt2" type="text" class="form-control" >
+            </div>
+        </div>
+        <div class="row col-sm-12">
+            <div class="col-sm-1">
+                <p>Date : </p>
+            </div>
+            <div class="col-sm-2">
+            <div class="dropdown" class="btn btn-primary dropdown-toggle">
+
+
+                <select id="ddlDate">
+                  <option value="monday">MONDAY</option>
+                  <option value="tuesday">TUESDAY</option>
+                  <option value="wednesday">WEDNESDAY</option>
+                  <option value="thursday">THURSDAY</option>
+                  <option value="friday">FRIDAY</option>
+                  <option value="saturday">SATURDAY</option>
+                  <option value="sunday">SUNDAY</option>
+                </select>
+
+              </div>
+            </div>
+            <div class="col-sm-1">
+                <button id="btnAdd2" type="button" class="btn btn-danger">ADD</button>
+            </div>
+        </div>
+
+      <div class="col-sm-12 row">
+       <div class="col-sm-4">
+               <div class="panel panel-danger">
+                  <div class="panel-heading">MONDAY</div>
+                  <div class="panel-body">
+                        <div class="table-responsive">          
+                              <table  id="monday" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>to do list</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-sm-4">
+               <div class="panel panel-info">
+                  <div class="panel-heading">TUESDAY</div>
+                  <div class="panel-body">
+                       <table  id="tuesday" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>ไปเที่ยว</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                  </div>
+                </div>
+        </div>
+        <div class="col-sm-4">
+               <div class="panel panel-info">
+                  <div class="panel-heading">WEDNESDAY</div>
+                  <div class="panel-body">
+                        <table  id="wednesday" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>ไปหาไรกิน</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                  </div>
+                </div>
+        </div>
+        </div>
+        <div class="col-sm-12 row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+               <div class="panel panel-info">
+                  <div class="panel-heading">THURSDAY</div>
+                  <div class="panel-body">
+                            <table  id="thursday" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>ไปไหนก็ได้โตแล้ว</td>
+                                  </tr>
+                                </tbody>
+                              </table>                      
+                  </div>
+                </div>
+        </div>
+        <div class="col-sm-4">
+               <div class="panel panel-info">
+                  <div class="panel-heading">FRIDAY</div>
+                  <div class="panel-body">
+                            <table  id="friday" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                              </table>    
+                  </div>
+                </div>
+        </div>
+        </div>
+        <div class="col-sm-12 row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+               <div class="panel panel-info">
+                  <div class="panel-heading">SATURDAY</div>
+                  <div class="panel-body">
+                            <table  id="saturday" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                              </table> 
+                  </div>
+                </div>
+        </div>
+        <div class="col-sm-4">
+               <div class="panel panel-info">
+                  <div class="panel-heading">SUNDAY</div>
+                  <div class="panel-body">
+                        <table  id="sunday" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                              </table> 
+                  </div>
+                </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="mProject1" class="tab-pane fade">
+      <h3>Project 1</h3>
+
+        <div class="row col-sm-12">
+            <div class="col-sm-1">
+                <p>New Task : </p>
+            </div>
+            <div class="col-sm-6">
+                <input id="txtP1" type="text" class="form-control" >
+            </div>
+        </div>
+        <div class="row col-sm-12">
+            <div class="col-sm-1">
+                <p>Date/Time : </p>
+            </div>
+            <div class="col-sm-2">
+                <input id="duedate" type="date" name="bday">
+            </div>
+            <div class="col-sm-1">
+                <button id="btnAddP1" type="button" class="btn btn-danger">ADD</button>
+            </div>
+        </div>
+
+        <div id="myGrid" class="col-sm-12 myGrid">
+            <div class="table-responsive">          
+                  <table  id="tableP1" class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Task</th>
+                        <th>Date/Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>to do list</td>
+                        <td>2017-02-10</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="mProject2" class="tab-pane fade">
+      <h3>Project 2</h3>
+        <div class="row col-sm-12">
+            <div class="col-sm-1">
+                <p>New Task : </p>
+            </div>
+            <div class="col-sm-6">
+                <input id="txtP2" type="text" class="form-control" >
+            </div>
+        </div>
+        <div class="row col-sm-12">
+            <div class="col-sm-1">
+                <p>Date/Time : </p>
+            </div>
+            <div class="col-sm-2">
+                <input id="duedate2" type="date" name="bday">
+            </div>
+            <div class="col-sm-1">
+                <button id="btnAddP2" type="button" class="btn btn-danger">ADD</button>
+            </div>
+        </div>
+
+        <div id="myGrid" class="col-sm-12 myGrid">
+            <div class="table-responsive">          
+                  <table  id="tableP2" class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Task</th>
+                        <th>Date/Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>to do list</td>
+                        <td>2017-02-01</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
+
+<script>
+
+var id = parseInt("2");
+var p1 = parseInt("2");
+var p2 = parseInt("2");
+var chBox = new Array();
+
+$(document).ready(function(){
+
+});
+
+
+$("#btnAdd").click(function(){
+    //var str = "':nth("+ id +")'";
+    $('#myTable > tbody:last-child').append('<tr><td>'+ id +'</td><td>'+ $("#text").val() +'</td><td><input id="ch'+ id +'" type="checkbox" name="vehicle" onclick="change('+ id +');"></td></tr>');
+    $('#text').val("");
+    id++;
+});
+
+
+$("#btnAdd2").click(function(){
+    var date = $('#ddlDate').val()
+    var i =  $('#'+ date +' tr:last-child td:first-child').html();
+    if(i==null){
+        i=0;
+    }
+    i++;
+    date = "#"+ date +" > tbody:last-child"
+    $(date).append('<tr><td>'+ i +'</td><td>'+ $("#txt2").val() +'</td></tr>');
+    $("#txt2").val("");
+});
+
+$("#btnAddP1").click(function(){
+    $('#tableP1 > tbody:last-child').append('<tr><td>'+ p1 +'</td><td>'+ $("#txtP1").val() +'</td><td>'+ $("#duedate").val() +'</td></tr>');
+    $('#txtP1').val("");
+    p1++;
+});
+
+$("#btnAddP2").click(function(){
+    $('#tableP2 > tbody:last-child').append('<tr><td>'+ p2 +'</td><td>'+ $("#txtP2").val() +'</td><td>'+ $("#duedate2").val() +'</td></tr>');
+    $('#txtP2').val("");
+    p2++;
+});
+
+$("#finnish").click(function() {
+    var count = 0;
+    count = chBox.length;
+     for(i =0; i < count;i++){
+        if(chBox[i] != ""){
+            $( "tr:nth("+ chBox[i] +")").css( "background", "#DCDCDC" );
+            $( "#inner" ).text(chBox[i]);
+            document.getElementById("ch"+chBox[i]).disabled = true;
+        }
+     }
+  });
+
+  function change(i){
+    var count = 0;
+    count = chBox.length;
+    var foundAt = jQuery.inArray( i, chBox ) ;
+    if(foundAt == -1){
+        chBox[count++] = i;        
+    }else{
+        //chBox[foundAt] = null;
+        chBox.splice(foundAt,1);
+    }
+  }
+
+</script>
